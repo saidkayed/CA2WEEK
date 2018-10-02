@@ -1,2 +1,6 @@
 /mavenproject1/target/
+<<<<<<< HEAD
 /mavenproject1/nbproject/
+=======
+/mavenproject1/src/main/resources/META-INF/persistence.xml
+>>>>>>> 84a3e01ee792633188f357bda353c096016d3bfa
