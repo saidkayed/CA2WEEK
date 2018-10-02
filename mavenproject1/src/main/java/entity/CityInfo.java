@@ -13,27 +13,28 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Sercan
+ * @author tobbe
  */
 @Entity
-public class Address implements Serializable {
+public class CityInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String street;
-    private String additionalInfo;
+    private int zipCode;
+    private String city;
 
-    public Address() {
+    public CityInfo(){
+        
     }
 
-    public Address(Long id, String street, String additionalInfo) {
+    public CityInfo(Long id, int zipCode, String city) {
         this.id = id;
-        this.street = street;
-        this.additionalInfo = additionalInfo;
+        this.zipCode = zipCode;
+        this.city = city;
     }
-
+    
     public Long getId() {
         return id;
     }
@@ -42,25 +43,26 @@ public class Address implements Serializable {
         this.id = id;
     }
 
-    public String getStreet() {
-        return street;
+    public int getZipCode() {
+        return zipCode;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public String getAdditionalInfo() {
-        return additionalInfo;
+    public String getCity() {
+        return city;
     }
 
-    public void setAdditionalInfo(String additionalInfo) {
-        this.additionalInfo = additionalInfo;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     @Override
     public String toString() {
-        return "Address{" + "id=" + id + ", street=" + street + ", additionalInfo=" + additionalInfo + '}';
+        return "CityInfo{" + "id=" + id + ", zipCode=" + zipCode + ", city=" + city + '}';
     }
+
     
 }
