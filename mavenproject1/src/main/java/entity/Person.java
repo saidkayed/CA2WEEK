@@ -33,7 +33,7 @@ public class Person implements Serializable {
     private List<Phone> phones;
     
     @ManyToOne
-    private Address address = new Address();
+    private Address address;
     @ManyToMany
     private List<Hobby> hobbys;
 

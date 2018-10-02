@@ -29,7 +29,7 @@ public class Phone implements Serializable {
     private String description;
     
     @ManyToOne
-Person person = new Person();
+Person person;
 
     public Phone() {
     }

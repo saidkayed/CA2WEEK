@@ -31,7 +31,7 @@ public class Address implements Serializable {
     private List<Person> persons;
     
     @ManyToOne
-    private CityInfo cityinfo = new CityInfo();
+    private CityInfo cityinfo;
 
     public Address() {
     }
