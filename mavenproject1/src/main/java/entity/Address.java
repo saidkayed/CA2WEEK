@@ -6,10 +6,13 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -24,6 +27,11 @@ public class Address implements Serializable {
     private Long id;
     private String street;
     private String additionalInfo;
+    @OneToMany(mappedBy = "address")
+    private List<Person> persons;
+    
+    @ManyToOne
+    private CityInfo cityinfo = new CityInfo();
 
     public Address() {
     }
