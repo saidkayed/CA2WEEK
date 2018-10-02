@@ -1,7 +1,7 @@
 package mapper;
 
+import dto.PersonDTO;
 import entity.Person;
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
@@ -18,12 +18,12 @@ public class PersonMapper {
         return emf.createEntityManager();
     }
     
-        public List<Person> findAllPersons() {
+        public PersonDTO findPersonFromPhonenr(int number) {
         EntityManager em = getEntityManager();
         try
         {
-            Query q = em.createNamedQuery("Person.findAll");
-            return q.getResultList();
+            Query q = em.createQuery("SELECT p FROM PhoneDTO p WHERE p.number = :insert");
+            return (PersonDTO) q.getSingleResult();
         } finally
         {
             em.close();
