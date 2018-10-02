@@ -5,10 +5,25 @@
  */
 package test;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import mapper.PersonMapper;
+
 /**
  *
  * @author sidad
  */
 public class tester {
+    
+    public static void main(String[] args) {
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+        
+        PersonMapper pm = new PersonMapper(emf);
+        
+        
+        
+    
+    }
     
 }
