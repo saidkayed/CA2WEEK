@@ -1,14 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mapper;
 
-/**
- *
- * @author sidad
- */
+import entity.Person;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+
 public class PersonMapper {
     
+        EntityManagerFactory emf;
+
+    public PersonMapper(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
+    
+        public List<Person> findAllPersons() {
+        EntityManager em = getEntityManager();
+        try
+        {
+            Query q = em.createNamedQuery("Person.findAll");
+            return q.getResultList();
+        } finally
+        {
+            em.close();
+        }
+    }
 }
