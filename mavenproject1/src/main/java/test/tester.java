@@ -21,7 +21,7 @@ public class tester {
         
         PersonMapper pm = new PersonMapper(emf);
         
-        
+        System.out.println(pm.getAllZipCodes());
         
     
     }
